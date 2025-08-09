@@ -1,0 +1,15 @@
+digraph
+{
+    elf0 [label="0.elf"];
+    elf  [label="main.elf"];
+    crc  [label="crc.txt"];
+    bin  [label="*.bin"];
+    obj  [label="*.o"];
+
+    "*.c" -> obj [label=" Compile\n Assemble"];
+    obj -> elf0 [label=" Link"];
+    obj -> elf  [label=" Link"];
+    elf0 -> bin [label=" objcopy"];
+    bin -> crc [label=" syms.def\n gen-crc"];
+    crc -> elf [label=" --defsym"];
+}

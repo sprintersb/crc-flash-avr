@@ -1,0 +1,13 @@
+*.[isox]
+*.elf
+*.lst
+*.bin
+*.map
+*.res
+*.out
+
+s-vars
+crc.txt
+syms.def
+
+*~
